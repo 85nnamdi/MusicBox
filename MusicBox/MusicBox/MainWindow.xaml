@@ -17,7 +17,7 @@
         <!--//Templates for toggle style-->
         
         <ImageBrush x:Key="tb_mouse_over"
-                    ImageSource="Assets/img_tg_menu.png"/>
+                    ImageSource="/img_tg_menu.png"/>
         <!--//Text font style-->
         <Style x:Key="font_style" TargetType="TextBlock">
             <Setter Property="FontFamily"
@@ -88,7 +88,7 @@
         </Style>
         
         <!--//Close button style//-->
-        <ImageBrush x:Key="CloseBtn_MouseOver" ImageSource="Assets/img_exit.png"/>
+        <ImageBrush x:Key="CloseBtn_MouseOver" ImageSource="/img_exit.png"/>
         <Style x:Key="close_btn" TargetType="{x:Type Button}">
             <Setter Property="Template">
                 <Setter.Value>
@@ -122,7 +122,7 @@
             <Grid x:Name="bg" PreviewMouseLeftButtonDown="bg_PreviewMouseLeftButtonDown">
                 <Grid.Background>
                     <ImageBrush x:Name="img_bg"
-                                ImageSource="Assets/img_background.png" 
+                                ImageSource="/img_background.png"
                                 Stretch="Fill"/>
                 </Grid.Background>
             </Grid>
@@ -146,7 +146,7 @@
                         BorderThickness="0"
                         Style="{StaticResource close_btn}" Click="CloseButton_Click">
                     <Button.Background>
-                        <ImageBrush ImageSource="Assets/img_exit.png" />
+                        <ImageBrush ImageSource="/img_exit.png" />
                     </Button.Background>
                 </Button>
 
@@ -193,7 +193,7 @@
                                       Style="{StaticResource tb_style}" Unchecked="tog_button_Unchecked" Checked="tog_button_Checked">
                             <!--//Default imgge for the toggle button-->
                             <ToggleButton.Background>
-                                <ImageBrush ImageSource="Assets/img_tg_button.png"
+                                <ImageBrush ImageSource="/img_tg_button.png"
                                             Stretch="None"/>
                             </ToggleButton.Background>
                             <!--//Register envent for toggle button-->
@@ -227,7 +227,7 @@
                                       Margin="0,0,0,15" MouseEnter="ListViewItem_MouseEnter">
                             <StackPanel Orientation="Horizontal"
                                         Width="230">
-                                <Image Source="Assets/img_home.png"
+                                <Image Source="/img_home.png"
                                        Stretch="None"
                                        Margin="12, 0,0,0"/>
                                 <TextBlock Text="Home"
@@ -247,7 +247,7 @@
                                       Margin="0,0,0,15" MouseEnter="ListViewItem_MouseEnter">
                             <StackPanel Orientation="Horizontal"
                                         Width="230">
-                                <Image Source="Assets/img_users.png"
+                                <Image Source="/img_users.png"
                                        Stretch="None"
                                        Margin="12, 0,0,0"/>
                                 <TextBlock Text="Users"
@@ -267,7 +267,7 @@
                                       Margin="0,0,0,15" MouseEnter="ListViewItem_MouseEnter">
                             <StackPanel Orientation="Horizontal"
                                         Width="230">
-                                <Image Source="Assets/img_messages.png"
+                                <Image Source="/img_messages.png"
                                        Stretch="None"
                                        Margin="12, 0,0,0"/>
                                 <TextBlock Text="Messages"
@@ -287,7 +287,7 @@
                                       Margin="0,0,0,15" MouseEnter="ListViewItem_MouseEnter">
                             <StackPanel Orientation="Horizontal"
                                         Width="230">
-                                <Image Source="Assets/img_maps.png"
+                                <Image Source="/img_maps.png"
                                        Stretch="None"
                                        Margin="12, 0,0,0"/>
                                 <TextBlock Text="Maps"
@@ -307,7 +307,7 @@
                                       Margin="0,0,0,15" MouseEnter="ListViewItem_MouseEnter">
                             <StackPanel Orientation="Horizontal"
                                         Width="230">
-                                <Image Source="Assets/img_settings.png"
+                                <Image Source="/img_settings.png"
                                        Stretch="None"
                                        Margin="12, 0,0,0"/>
                                 <TextBlock Text="Settings"
@@ -327,7 +327,7 @@
                                       Margin="0,0,0,15" MouseEnter="ListViewItem_MouseEnter">
                             <StackPanel Orientation="Horizontal"
                                         Width="230">
-                                <Image Source="Assets/img_logout.png"
+                                <Image Source="/img_logout.png"
                                        Stretch="None"
                                        Margin="12, 0,0,0"/>
                                 <TextBlock Text="Logout"

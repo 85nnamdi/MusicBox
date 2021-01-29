@@ -6,4 +6,30 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="img_background.png" />
+    <None Remove="img_exit.png" />
+    <None Remove="img_home.png" />
+    <None Remove="img_logout.png" />
+    <None Remove="img_maps.png" />
+    <None Remove="img_messages.png" />
+    <None Remove="img_settings.png" />
+    <None Remove="img_tg_button.png" />
+    <None Remove="img_tg_menu.png" />
+    <None Remove="img_users.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="img_background.png" />
+    <Resource Include="img_exit.png" />
+    <Resource Include="img_home.png" />
+    <Resource Include="img_logout.png" />
+    <Resource Include="img_maps.png" />
+    <Resource Include="img_messages.png" />
+    <Resource Include="img_settings.png" />
+    <Resource Include="img_tg_button.png" />
+    <Resource Include="img_tg_menu.png" />
+    <Resource Include="img_users.png" />
+  </ItemGroup>
+
 </Project>
