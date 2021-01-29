@@ -13,6 +13,61 @@
         WindowStyle="None"
         WindowStartupLocation="CenterScreen"
         >
+    <Window.Resources>
+        <!--//Templates for toggle style-->
+        
+        <ImageBrush x:Key="tb_mouse_over"
+                    ImageSource="Assets/tg_menu.png"/>
+        <!--//Text font style-->
+        <Style x:Key="font_style" TargetType="TextBlock">
+            <Setter Property="FontFamily"
+                    Value="Fonts/Roboto-Light.ttf #Roboto"/>
+            <Setter Property="VerticalAlignment"
+                    Value="Center"/>
+            <Setter Property="HorizontalAlignment"
+                    Value="Left"/>
+            <Setter Property="Foreground"
+                    Value="White"/>
+            <Setter Property="FontSize"
+                    Value="20"/>
+
+        </Style>
+        <Style x:Key="tb_style" TargetType="{x:Type ToggleButton}">
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ToggleButton}">
+                        <Border x:Name="border"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                Background="{TemplateBinding Background}"
+                                SnapsToDevicePixels="True"/>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="False">
+                                <Setter Property="Background"
+                                        TargetName="border"
+                                        Value="{StaticResource tb_mouse_over}"/>
+                                <Setter Property="BorderBrush"
+                                        TargetName="border"
+                                        Value="{StaticResource tb_mouse_over}"/>
+                            </Trigger>
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter Property="Background"
+                                        TargetName="border"
+                                        Value="{StaticResource tb_mouse_over}"/>
+                                <Setter Property="BorderBrush"
+                                        TargetName="border"
+                                        Value="{StaticResource tb_mouse_over}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+
+                    </ControlTemplate>
+                </Setter.Value>
+                
+            </Setter>
+        </Style>
+
+
+    </Window.Resources>
     <Grid>
         <!-- // Set background-->
 
@@ -27,7 +82,25 @@
                 <StackPanel x:Name="st_pane1">
                     <!-- for the menu -->
                     <Grid Height="90">
-                        <!--//Toggle button-->
+                        <!--//Menu title text-->
+                        <TextBlock Grid.Row="1"
+                                   Grid.Column="0"
+                                   Margin="73, -20,0,0"
+                                   Text="M E N U"
+                                   Foreground="Wheat"
+                                   FontSize="22"
+                                   Background="Transparent"
+                                   HorizontalAlignment="Left"
+                                   VerticalAlignment="center"
+                                   Style="{StaticResource font_style}">
+                            <!--//Shadow effect-->
+                            <TextBlock.Effect>
+                                <DropShadowEffect BlurRadius="10"
+                                                  ShadowDepth="1"
+                                                  Direction="90"
+                                                  Color="White"/>
+                            </TextBlock.Effect>
+                        </TextBlock>
                         <ToggleButton x:Name="tog_button"
                                       Grid.Column="0"
                                       VerticalAlignment="Center"
@@ -35,7 +108,8 @@
                                       Margin="18, -20,0,0"
                                       Height="30"
                                       Width="30"
-                                      BorderThickness="0">
+                                      BorderThickness="0"
+                                      Style="{StaticResource tb_style}">
                             <!--//Default imgge for the toggle button-->
                             <ToggleButton.Background>
                                 <ImageBrush ImageSource="Assets/tg_button.png"
@@ -46,13 +120,32 @@
                                 <EventTrigger RoutedEvent="ToggleButton.Unchecked">
                                     <BeginStoryboard>
                                         <Storyboard x:Name="HideStackpanel">
-                                            
+                                            <DoubleAnimation 
+                                                Storyboard.TargetName="nav_pane1"
+                                                Storyboard.TargetProperty="Width"
+                                                BeginTime="0:0:0"
+                                                From="65" To="230"
+                                                Duration="0:0:0.3">
+                                                
+                                            </DoubleAnimation>
                                         </Storyboard>
                                     </BeginStoryboard>
                                 </EventTrigger>
                             </ToggleButton.Triggers>
                         </ToggleButton>
                     </Grid>
+                    
+                    <!--//List view of menu list items-->
+                    <ListView x:Name="LV"
+                              Background="Transparent"
+                              BorderBrush="Transparent"
+                              ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+
+                        <ListViewItem>
+                            
+                        </ListViewItem>
+                        
+                    </ListView>
                 </StackPanel>
             </Grid>
         </Grid>
