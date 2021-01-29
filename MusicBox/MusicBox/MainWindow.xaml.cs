@@ -64,5 +64,10 @@ namespace MusicBox
             tog_button.IsChecked = false;
 
         }
+
+        private void CloseButton_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
     }
 }
